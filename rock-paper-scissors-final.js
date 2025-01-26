@@ -1,7 +1,7 @@
-let score = JSON.parse(localStorage.getItem('score')) || {
+let score = JSON.parse(localStorage.getItem("score")) || {
   wins: 0,
   losses: 0,
-  ties: 0
+  ties: 0,
 };
 
 updateScoreElement();
@@ -9,83 +9,86 @@ updateScoreElement();
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
 
-  let result = '';
+  let result = "";
 
-  if (playerMove === 'Scissors') {
-    if (computerMove === 'Rock') {
-    result = 'You lose.';
-  } else if (computerMove === 'Paper') {
-    result = 'You win!';
-  } else {
-    result = 'Tie.';
-  }
-  } else if (playerMove === 'Paper') {
-    if (computerMove === 'Rock') {
-      result = 'You win!';
-    } else if (computerMove === 'Paper') {
-      result = 'Tie.';
+  if (playerMove === "Scissors") {
+    if (computerMove === "Rock") {
+      result = "You lose.";
+    } else if (computerMove === "Paper") {
+      result = "You win!";
     } else {
-      result = 'You lose.';
+      result = "Tie.";
+    }
+  } else if (playerMove === "Paper") {
+    if (computerMove === "Rock") {
+      result = "You win!";
+    } else if (computerMove === "Paper") {
+      result = "Tie.";
+    } else {
+      result = "You lose.";
     }
   } else {
-    if (computerMove === 'Rock') {
-      result = 'Tie.';
-    } else if (computerMove === 'Paper') {
-      result = 'You lose.';
+    if (computerMove === "Rock") {
+      result = "Tie.";
+    } else if (computerMove === "Paper") {
+      result = "You lose.";
     } else {
-      result = 'You win!';
+      result = "You win!";
     }
   }
 
-  if (result === 'You win!') {
+  if (result === "You win!") {
     score.wins++;
-  } else if (result === 'You lose.') {
+  } else if (result === "You lose.") {
     score.losses++;
   } else {
     score.ties++;
   }
 
-  localStorage.setItem('score', JSON.stringify(score));
+  localStorage.setItem("score", JSON.stringify(score));
 
   updateScoreElement();
 
-  document.querySelector('.js-result')
-    .innerHTML = `${result}`;
+  document.querySelector(".js-result").innerHTML = `${result}`;
 
-  document.querySelector('.js-moves')
-    .innerHTML = `You chose 
+  document.querySelector(".js-moves").innerHTML = `You chose 
     <img src="images/${playerMove}-emoji.png" class="move-icon">
     The computer chose
-    <img src="images/${computerMove}-emoji.png" class="move-icon">`
+    <img src="images/${computerMove}-emoji.png" class="move-icon">`;
 }
 
 function updateScoreElement() {
-  document.querySelector('.js-score')
-  .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+  document.querySelector(
+    ".js-score"
+  ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
 }
 
 function pickComputerMove() {
-  const randomNumber = Math.floor((Math.random() * 3) + 1);
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
 
-  let computerMove = '';
+  let computerMove = "";
 
   if (randomNumber == 1) {
-    computerMove = 'Rock';
+    computerMove = "Rock";
   } else if (randomNumber == 2) {
-    computerMove = 'Paper';
+    computerMove = "Paper";
   } else {
-    computerMove = 'Scissors';
+    computerMove = "Scissors";
   }
 
   return computerMove;
 }
 
 function handleKeyDown(event) {
-  if (event.key === '1') {
-    playGame('Rock');
-  } else if (event.key === '2') {
-    playGame('Paper');
-  } else if (event.key === '3') {
-    playGame('Scissors');
-  } 
+  if (event.key === "1") {
+    playGame("Rock");
+  } else if (event.key === "2") {
+    playGame("Paper");
+  } else if (event.key === "3") {
+    playGame("Scissors");
+  }
 }
+
+document.addEventListener("keydown", (event) => {
+  handleKeyDown(event);
+});

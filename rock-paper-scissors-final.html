@@ -1,40 +1,46 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
   <head>
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="rock-paper-scissors-final.css">
+    <link rel="stylesheet" href="rock-paper-scissors-final.css" />
   </head>
-  <body> 
+  <body>
     <p class="title">Rock Paper Scissors</p>
 
-    <button onclick="
+    <button
+      onclick="
       playGame('Rock');
-    " class="move-button"><img src="images/rock-emoji.png" class="move-icon">
+    "
+      class="move-button"
+    >
+      <img src="images/rock-emoji.png" class="move-icon" />
     </button>
 
-    <button onclick="
+    <button
+      onclick="
       playGame('Paper');
-    " class="move-button"><img src="images/paper-emoji.png" class="move-icon">
+    "
+      class="move-button"
+    >
+      <img src="images/paper-emoji.png" class="move-icon" />
     </button>
 
-    <button onclick="
+    <button
+      onclick="
       playGame('Scissors');
-    " class="move-button"><img src="images/scissors-emoji.png" class="move-icon">
+    "
+      class="move-button"
+    >
+      <img src="images/scissors-emoji.png" class="move-icon" />
     </button>
 
-    <br>
+    <br />
 
-    <button onkeypress=" 
-      handleKeyDown(event);
-    " class="number-icon">1</button>
+    <button onkeydown="handleKeyDown(event);" class="number-icon">1</button>
 
-    <button onkeypress="score
-      handleKeyDown(event);
-    " class="number-icon">2</button>
+    <button onkeydown="handleKeyDown(event);" class="number-icon">2</button>
 
-    <button onkeypress="
-      handleKeyDown(event);
-    " class="number-icon">3</button>
+    <button onkeydown="handleKeyDown(event);" class="number-icon">3</button>
 
     <p class="js-result result"></p>
 
@@ -42,13 +48,18 @@
 
     <p class="js-score score"></p>
 
-    <button onclick="
+    <button
+      onclick="
       score.wins = 0;
       score.losses = 0;
       score.ties = 0;
       localStorage.removeItem('score');
       updateScoreElement();
-    " class="reset-score-button">Reset Score</button>
+    "
+      class="reset-score-button"
+    >
+      Reset Score
+    </button>
     <script src="rock-paper-scissors-final.js"></script>
   </body>
 </html>
