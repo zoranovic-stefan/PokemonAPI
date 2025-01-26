@@ -24,11 +24,17 @@
 
     <br>
 
-    <button onkeydown="handleKeyDown(event);" class="number-icon">1</button>
+    <button onkeydown="handleKeyDown(event);" class="number-icon" onclick="
+      playGame('Rock');
+    ">1</button>
 
-    <button onkeydown="handleKeyDown(event);" class="number-icon">2</button>
+    <button onkeydown="handleKeyDown(event);" class="number-icon" onclick="
+      playGame('Paper');
+    ">2</button>
 
-    <button onkeydown="handleKeyDown(event);" class="number-icon">3</button>
+    <button onkeydown="handleKeyDown(event);" class="number-icon" onclick="
+      playGame('Scissors');
+    ">3</button>
 
     <p class="js-result result"></p>
 
