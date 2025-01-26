@@ -1,1 +1,1 @@
-# PokemonAPI
+# Simple Rock-Paper-Scissors
