@@ -89,3 +89,7 @@ function handleKeyDown(event) {
     playGame('Scissors');
   } 
 }
+
+document.addEventListener('keydown', (event) => {
+  handleKeyDown(event);
+});
