@@ -35,3 +35,10 @@ body {
   padding: 10px 15px;
   cursor: pointer;
 }
+
+.number-icon {
+  margin-top: 3px;
+  padding: 5px;
+  margin-left: 35px;
+  margin-right: 35px;
+}

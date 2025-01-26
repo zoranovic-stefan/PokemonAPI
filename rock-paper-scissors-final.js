@@ -79,3 +79,13 @@ function pickComputerMove() {
 
   return computerMove;
 }
+
+function handleKeyDown(event) {
+  if (event.key === '1') {
+    playGame('Rock');
+  } else if (event.key === '2') {
+    playGame('Paper');
+  } else if (event.key === '3') {
+    playGame('Scissors');
+  } 
+}
